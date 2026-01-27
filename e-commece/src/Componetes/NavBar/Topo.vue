@@ -19,18 +19,23 @@
 <script>
 </script>
 
-<style >
+<style  scoped>
 nav{
 display: flex;
 flex-direction: row;
 justify-content: space-between;
 }
 
-ol{
+ol , i{
     display: flex;
+    text-decoration: none;
     list-style: none;
-    margin: 0;
+    margin: 20px;
     gap : 20px;
+}
+
+li > a{
+    text-decoration: none;
 }
 
 
