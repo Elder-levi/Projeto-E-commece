@@ -1,9 +1,7 @@
 <template>
 <nav>
 <i>
-    puff
-    
-    <img src="" alt="">
+    <img src="../IMG/cidao-removebg-preview.png" alt="">   
 </i>
 
 <ol>
@@ -20,17 +18,25 @@
 </script>
 
 <style  scoped>
+
+img{
+    width: 30px;
+    height: 30px;
+}
+
+
 nav{
 display: flex;
 flex-direction: row;
 justify-content: space-between;
+background-color: beige;
 }
 
 ol , i{
     display: flex;
     text-decoration: none;
     list-style: none;
-    margin: 20px;
+    margin: 10px;
     gap : 20px;
 }
 
