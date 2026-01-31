@@ -1,18 +1,35 @@
 <script setup>
-import Topo from './Componetes/NavBar/Topo.vue'
-import CarroselDestaq from './Componetes/Header/CarroselDestaq.vue'
-import ListagemOpco from './Componetes/Main/ListagemOpco.vue'
-import ListagemProdut from './Componetes/Main/ListagemProdut.vue'
-import Rodape from './Componetes/Footer/rodape.vue'
+import Topo 
+from './Componetes/NavBar/Topo.vue'
+
+import CarroselDestaq 
+from './Componetes/Header/CarroselDestaq.vue'
+
+import ListagemOpco 
+from './Componetes/Main/ListagemOpco.vue'
+
+import ListagemProdut 
+from './Componetes/Main/ListagemProdut.vue'
+
+import CadItem 
+from './Componetes/Cadastros/CadItem.vue'
+
+
+import Rodape 
+from './Componetes/Footer/rodape.vue'
 
 </script>
 
 <template>
     <div id="app" >
         <Topo />
+   
+        <CadItem/>
+      <!--
         <CarroselDestaq/>
         <ListagemOpco/>
         <ListagemProdut />
+      -->
         <Rodape />
     </div>
 </template>

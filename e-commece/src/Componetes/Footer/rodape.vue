@@ -6,9 +6,9 @@
                 <h4>Sobre Nós</h4>
                 <p>Sua loja online de confiança com os melhores produtos do mercado.</p>
                 <div class="social-links">
-                    <a href="#" class="social-icon">Facebook</a>
-                    <a href="#" class="social-icon">Instagram</a>
-                    <a href="#" class="social-icon">Twitter</a>
+                    <a href="#" class="social-icon"><img src="./icon/facebook.png" alt=""></a>
+                    <a href="#" class="social-icon"><img src="./icon/instagram (1).png" alt=""></a>
+                    <a href="#" class="social-icon"><img src="./icon/whatsapp.png" alt=""></a>
                 </div>
             </div>
 
