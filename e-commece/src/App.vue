@@ -14,18 +14,21 @@ from './Componetes/Main/ListagemProdut.vue'
 import CadItem 
 from './Componetes/Cadastros/CadItem.vue'
 
-
 import Rodape 
 from './Componetes/Footer/rodape.vue'
+
+import FormsLog
+from './Componetes/Login/FormsLog.vue'
+
 
 </script>
 
 <template>
     <div id="app" >
-        <Topo />
-   
-        <CadItem/>
+       <Topo/>
+       <FormsLog/>
       <!--
+         <CadItem/>
         <CarroselDestaq/>
         <ListagemOpco/>
         <ListagemProdut />
