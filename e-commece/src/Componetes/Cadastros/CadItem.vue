@@ -1,27 +1,68 @@
 <template>
 
-<form action="">
+<form @submit.prevent="CadProduto">
     <label for=""> Insira Imagen :</label>
     <input type="file" 
-     accept="image/*" 
+     accept="image/*"
+    @change="CarregaImg" 
      placeholder="Imagen">
 
     <label for=""> Nome do Produto:</label>
-    <input type="text" 
+    <input type="text"
+    v-model="nome" 
     placeholder="Nome Produto">
 
     <label for=""> Descrição do Produto:</label>
     <input type="text" 
+    v-model="descricao"
     placeholder="Descrição do Produto">
     
     <label for=""> Preço do Produto:</label>
-    <input type="text" 
+    <input type="text"
+    v-model="preco" 
     placeholder="Preço do Produto">
 
    <button type="submit"> Cadastrar Produto </button>
 </form>
 </template>
-<script>
+<script setup> 
+
+import { ref } from 'vue';
+import url from '../ServiceApi/Service.js';
+
+const imagem = ref(null);
+const nome = ref("");
+const descricao = ref("");
+const preco = ref("");
+
+console.log(preco.value);
+
+const CarregaImg = (event) =>{
+    imagem.value = event.target.files[0];
+}
+
+const CadProduto = async () =>
+{
+    try {
+        const formData = new FormData();
+        formData.append("imagem", imagem.value);
+        formData.append("nome", nome.value);
+        formData.append("descricao", descricao.value);
+        formData.append("preco", Number(preco.value));
+
+    
+        await url.post("/Prod/Cad/Produto", formData, {
+        headers: {
+                "Content-Type": "multipart/form-data"
+                }
+        });
+                alert("Produto cadastrado com sucesso!");
+    } 
+    catch (error) {
+    
+        console.log("Erro ao cadastrar produto:" + error);    
+    }   
+}
 </script>
 <style scoped>
 

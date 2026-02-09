@@ -26,9 +26,10 @@ from './Componetes/Login/FormsLog.vue'
 <template>
     <div id="app" >
        <Topo/>
-       <FormsLog/>
+        <CadItem/>
+        
       <!--
-         <CadItem/>
+        <FormsLog/>
         <CarroselDestaq/>
         <ListagemOpco/>
         <ListagemProdut />
