@@ -1,12 +1,12 @@
 <template>
 
 <form @submit.prevent="CadProduto">
-    <label for=""> Insira Imagen :</label>
+    <!--- <label for=""> Insira Imagen :</label>
     <input type="file" 
      accept="image/*"
     @change="CarregaImg" 
      placeholder="Imagen">
-
+   -->
     <label for=""> Nome do Produto:</label>
     <input type="text"
     v-model="nome" 
@@ -37,25 +37,31 @@ const preco = ref("");
 
 console.log(preco.value);
 
+/*
 const CarregaImg = (event) =>{
     imagem.value = event.target.files[0];
 }
-
+*/
 const CadProduto = async () =>
 {
     try {
         const formData = new FormData();
-        formData.append("imagem", imagem.value);
-        formData.append("nome", nome.value);
-        formData.append("descricao", descricao.value);
-        formData.append("preco", Number(preco.value));
+        
+        /*formData.append("imagem", imagem.value);*/
 
+      const produto = {
+      nome: nome.value,
+      descricao: descricao.value,
+      preco: Number(preco.value)
+     };
+
+    formData.append(
+      "produto",
+      new Blob([JSON.stringify(produto)], { type: "application/json" })
+    );
     
-        await url.post("/Prod/Cad/Produto", formData, {
-        headers: {
-                "Content-Type": "multipart/form-data"
-                }
-        });
+        await url.post("/Prod/Cad/Produto", formData);
+
                 alert("Produto cadastrado com sucesso!");
     } 
     catch (error) {
