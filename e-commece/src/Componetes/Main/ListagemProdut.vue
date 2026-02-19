@@ -1,49 +1,53 @@
 <template>
 <div class="Produto-Listagem">
-    <div class="Produto-Item">
-        <img src="" alt="Produto Imagem">
-      <h3>Nome Produto</h3>
-      <p>Descrição do produto</p>
-        <span>R$ 99,99</span>
+    <div class="Produto-Item"
+    v-for=" produto in produtos"
+    :key="produto.id"
+    >
+
+        <img 
+         v-if="produto.CaminhoIMG"
+        :src="`http://localhost:9090${produto.CaminhoIMG}`" 
+        alt="Produto Imagem">
+        
+    
+        <h3> {{ produto.nome }} </h3>
+        <p>{{ produto.Descricao }}</p>
+        <span>{{ produto.preco }}</span>
+
+
+
         <button>Adicionar ao Carrinho</button>
         <button>Peça-ja</button>
     </div>
 
-       <div class="Produto-Item">
-        <img src="" alt="Produto Imagem">
-      <h3>Nome Produto</h3>
-      <p>Descrição do produto</p>
-        <span>R$ 99,99</span>
-        <button>Adicionar ao Carrinho</button>
-        <button>Peça-ja</button>
-    </div>
-
-      <div class="Produto-Item">
-        <img src="" alt="Produto Imagem">
-      <h3>Nome Produto</h3>
-      <p>Descrição do produto</p>
-        <span>R$ 99,99</span>
-        <button>Adicionar ao Carrinho</button>
-        <button>Peça-ja</button>
-    </div>
-
-      <div class="Produto-Item">
-        <img src="" alt="Produto Imagem">
-      <h3>Nome Produto</h3>
-      <p>Descrição do produto</p>
-        <span>R$ 99,99</span>
-        <button>Adicionar ao Carrinho</button>
-        <button>Peça-ja</button>
-    </div>
+   
 
 
 </div>
 
 </template>
-<script>
-export default{
-    name:'ListagemProdut'
+<script setup>
+import { onMounted , ref } from 'vue';
+import url from '../ServiceApi/Service';
+
+
+const produtos = ref([])
+
+onMounted( async() =>{
+try {
+    const response = await url.get("/Prod/Produtos")
+    produtos.value = response.data;
+    console.log(produtos.value);
+
+} catch (error) {
+    alert("Erro ao carregar produtos, tente novamente mais tarde.");
+
+    console.log("Erro ao carregar produtos:" + error);
 }
+
+
+})
 </script>
 
 <style scoped>

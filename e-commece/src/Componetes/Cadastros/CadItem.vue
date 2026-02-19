@@ -1,12 +1,12 @@
 <template>
 
 <form @submit.prevent="CadProduto">
-    <!--- <label for=""> Insira Imagen :</label>
+    <label for=""> Insira Imagen :</label>
     <input type="file" 
-     accept="image/*"
+     accept="Imagem/*"
     @change="CarregaImg" 
-     placeholder="Imagen">
-   -->
+     placeholder="Imagem">
+  
     <label for=""> Nome do Produto:</label>
     <input type="text"
     v-model="nome" 
@@ -35,19 +35,16 @@ const nome = ref("");
 const descricao = ref("");
 const preco = ref("");
 
-console.log(preco.value);
-
-/*
 const CarregaImg = (event) =>{
     imagem.value = event.target.files[0];
 }
-*/
+
 const CadProduto = async () =>
 {
     try {
         const formData = new FormData();
         
-        /*formData.append("imagem", imagem.value);*/
+    formData.append("Imagem", imagem.value)
 
       const produto = {
       nome: nome.value,

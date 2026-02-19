@@ -39,6 +39,7 @@ export default {
     };
 
     prevButton.addEventListener('click', handlePrev);
+    
     nextButton.addEventListener('click', handleNext);
   },
   methods: {
