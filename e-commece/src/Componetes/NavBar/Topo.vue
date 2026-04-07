@@ -7,8 +7,10 @@
     </div>
 
     <ul class="nav-links">
-      <li><a href="#home" class="nav-link">Home</a></li>
-      <li><a href="#produtos" class="nav-link">Produtos</a></li>
+      <li><router-link to="/" class="nav-link">Home</router-link></li>
+      <li><router-link to="/produtos" class="nav-link">Produtos</router-link></li>
+      <li><router-link to="/login" class="nav-link">Entrar</router-link></li>
+      <li><router-link to="/cadastro" class="nav-link">Cadastrar</router-link></li>
     </ul>
 
     <div class="nav-actions">
@@ -16,7 +18,7 @@
         <span>🔍</span>
       </button>
       <button class="cart-btn" title="Carrinho">
-        <span>🛒</span>
+      <router-link to= "/Carrinho"><span>🛒<</router-link>
         <span class="badge">0</span>
       </button>
     </div>
