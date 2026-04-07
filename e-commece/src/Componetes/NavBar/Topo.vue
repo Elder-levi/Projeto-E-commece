@@ -18,7 +18,7 @@
         <span>🔍</span>
       </button>
       <button class="cart-btn" title="Carrinho">
-      <router-link to= "/Carrinho"><span>🛒<</router-link>
+      <router-link to= "/Carrinho">🛒</router-link>
         <span class="badge">0</span>
       </button>
     </div>

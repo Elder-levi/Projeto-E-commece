@@ -1,10 +1,10 @@
 <template>
-
-
+  
+  <Compra/>
 
 </template>
-<script>
-
+<script setup>
+import Compra from '@/Componetes/Carrinho/compra.vue'
 
 
 
