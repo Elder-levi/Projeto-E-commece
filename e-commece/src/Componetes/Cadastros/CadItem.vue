@@ -12,6 +12,14 @@
     v-model="nome" 
     placeholder="Nome Produto">
 
+
+    <label for="">Categoria:</label>
+    <select name="Categoria" id="">
+    <option value="Cosmeticos">Cosmeticos</option>
+    <option value="Cosmeticos">Cosmeticos</option>
+    <option value="Cosmeticos">Cosmeticos</option>
+    </select>
+
     <label for=""> Descrição do Produto:</label>
     <input type="text" 
     v-model="descricao"
@@ -87,15 +95,24 @@ label {
     color: #667eea;
 }
 
-input {
+input,
+select {
     margin-bottom: 15px;
-    padding: 15px ;
+    padding: 15px;
     border: 1px solid #ddd;
     border-radius: 4px;
     font-size: 16px;
+    background-color: #fff;
+    color: #333;
+    width: 100%;
 }
 
-input:focus {
+select {
+    appearance: none;
+}
+
+input:focus,
+select:focus {
     outline: none;
     border-color: #667eea;
     box-shadow: 0 0 5px rgba(102, 126, 234, 0.5);
