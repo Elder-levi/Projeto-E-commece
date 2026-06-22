@@ -5,8 +5,18 @@
         <div class="Carrosel-Item"> <img src="../IMG/paisagem-natural-og.webp" alt="Paisagem destaque 2"> </div>
         <div class="Carrosel-Item"> <img src="../IMG/paisagem-natural-og.webp" alt="Paisagem destaque 3"> </div>
     </div>
-    <button class="CarroselPrev">Prev</button>
-    <button class="CarroselNext">Next</button>
+     <div class="Box-Catalogo">
+          <div class="Top-Catalogo">
+               <h1>Explorando Catalogo</h1>
+               <div class="Box-Buttons">
+                <button class="CarroselPrev"><img src="../Assets/Icons/seta-esquerda.png" alt=""></button>
+                <button class="CarroselNext"><img src="../Assets/Icons/seta-direita.png" alt=""></button>
+              </div> 
+            </div>
+          <div>
+       </div>
+     </div>
+    
 </div>
 </template>
 <script>
@@ -84,7 +94,23 @@ export default {
 .Carrosel-Item.active {
     display: block;
 }
+.Top-Catalogo {
+display: flex;
+flex-direction: row;
+justify-content: space-between;
+align-items: center;
+text-align: center;
+padding: 20px;
+}
 
+
+.CarroselPrev, .CarroselNext {
+background: none;
+border: none;
+cursor: pointer;
+} 
+
+/*
 .CarroselPrev {
     position: absolute;
     top: 50%;
@@ -128,6 +154,9 @@ export default {
     transform: translateY(-50%) scale(1.05);
     box-shadow: 0 6px 20px rgba(102, 126, 234, 0.6);
 }
+*/
+
+
 
 </style>
 

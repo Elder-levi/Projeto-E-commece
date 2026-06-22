@@ -1,27 +1,88 @@
 <template>
   <nav class="navbar">
-    <div class="logo-section">
-      <div class="logo">
-        <img src="../IMG/cidao.jpg" alt="Logo" class="logo-img">
-      </div>
+
+
+<!-- NAVBAR -->
+<header class="navbar">
+  <nav class="nav-container">
+
+    <!-- Logo -->
+    <div class="nav-logo">
+      PURPLE<span>SHOP</span>
     </div>
 
+    <!-- Links Desktop -->
     <ul class="nav-links">
-      <li><router-link to="/" class="nav-link">Home</router-link></li>
+      <li><router-link to="/"  class="nav-link active">Home</router-link></li>
       <li><router-link to="/produtos" class="nav-link">Produtos</router-link></li>
       <li><router-link to="/login" class="nav-link">Entrar</router-link></li>
       <li><router-link to="/cadastro" class="nav-link">Cadastrar</router-link></li>
     </ul>
 
-    <div class="nav-actions">
-      <button class="search-btn" title="Buscar">
-        <span>🔍</span>
+    <!-- Barra de Busca -->
+    <div class="nav-search">
+      <input type="text" placeholder="O que você está procurando?" />
+      <svg class="search-icon" xmlns="http://www.w3.org/2000/svg"
+           width="18" height="18" viewBox="0 0 24 24"
+           fill="none" stroke="currentColor" stroke-width="2"
+           stroke-linecap="round" stroke-linejoin="round">
+        <circle cx="11" cy="11" r="8"/>
+        <line x1="21" y1="21" x2="16.65" y2="16.65"/>
+      </svg>
+    </div>
+
+    <!-- Ícones -->
+    <div class="nav-icons">
+      <!-- Usuário -->
+      <button class="icon-btn" aria-label="Minha conta">
+        <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22"
+             viewBox="0 0 24 24" fill="none" stroke="currentColor"
+             stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/>
+          <circle cx="12" cy="7" r="4"/>
+        </svg>
       </button>
-      <button class="cart-btn" title="Carrinho">
-      <router-link to= "/Carrinho">🛒</router-link>
-        <span class="badge">0</span>
+
+      <!-- Carrinho -->
+      <button class="icon-btn cart-btn" aria-label="Carrinho">
+        <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22"
+             viewBox="0 0 24 24" fill="none" stroke="currentColor"
+             stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <circle cx="9" cy="21" r="1"/>
+          <circle cx="20" cy="21" r="1"/>
+          <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/>
+        </svg>
+        <span class="cart-badge">3</span>
+      </button>
+
+      <!-- Hamburguer Mobile -->
+      <button class="hamburger" id="hamburger" aria-label="Menu">
+        <span></span>
+        <span></span>
+        <span></span>
       </button>
     </div>
+  </nav>
+
+  <!-- Menu Mobile -->
+  <div class="mobile-menu" id="mobileMenu">
+    <div class="mobile-search">
+      <input type="text" placeholder="Buscar..." />
+      <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18"
+           viewBox="0 0 24 24" fill="none" stroke="currentColor"
+           stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <circle cx="11" cy="11" r="8"/>
+        <line x1="21" y1="21" x2="16.65" y2="16.65"/>
+      </svg>
+    </div>
+    <ul>
+      <li><router-link to="/"  class="nav-link active">Home</router-link></li>
+      <li><router-link to="/produtos" class="nav-link">Produtos</router-link></li>
+      <li><router-link to="/login" class="nav-link">Entrar</router-link></li>
+      <li><router-link to="/cadastro" class="nav-link">Cadastrar</router-link></li>
+    </ul>
+  </div>
+</header>
   </nav>
 </template>
 
@@ -38,200 +99,305 @@ export default {
   box-sizing: border-box;
 }
 
+
+/* ── Variáveis ─────────────────────────────────── */
+:root {
+  --primary:    #5b3fd4;
+  --primary-light: #f0ecff;
+  --accent:     #ff6b35;
+  --text:       #1a1333;
+  --text-muted: #6b5e8a;
+  --border:     #e2e8f0;
+  --bg:         #fafaf8;
+  --white:      #ffffff;
+  --font:       'Plus Jakarta Sans', sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+
+/* ── Top Bar ───────────────────────────────────── */
+.top-bar {
+  background-color: #5b3fd4;
+  color: var(--white);
+  font-size: 12px;
+  font-weight: 500;
+  text-align: center;
+  padding: 6px 16px;
+  letter-spacing: 0.01em;
+}
+
+/* ── Header / Navbar ───────────────────────────── */
 .navbar {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 1rem 2rem;
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
   position: sticky;
   top: 0;
-  z-index: 1000;
+  z-index: 100;
+  background:  #5b3fd4;
+  border-bottom: 1px solid var(--border);
+  box-shadow: 0 1px 8px rgba(0, 0, 0, 0.06);
 }
 
-/* Logo Section */
-.logo-section {
-  flex: 0 0 auto;
+.nav-container {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 24px;
+  height: 72px;
   display: flex;
   align-items: center;
+  gap: 32px;
 }
 
-.logo {
-  display: flex;
-  align-items: center;
-  gap: 0.75rem;
-  cursor: pointer;
-  transition: transform 0.3s ease;
+/* ── Logo ──────────────────────────────────────── */
+.nav-logo {
+  font-size: 22px;
+  font-weight: 800;
+  color: var(--primary);
+  letter-spacing: -0.03em;
+  white-space: nowrap;
+  flex-shrink: 0;
 }
 
-.logo:hover {
-  transform: scale(1.05);
+.nav-logo span {
+  color: var(--text);
 }
 
-.logo-img {
-  width: 45px;
-  height: 45px;
-  border-radius: 50%;
-  object-fit: cover;
-  border: 2px solid white;
-}
-
-.logo-text {
-  font-size: 1.5rem;
-  font-weight: 700;
-  color: white;
-  letter-spacing: 0.5px;
-}
-
-/* Navigation Links */
+/* ── Links Desktop ─────────────────────────────── */
 .nav-links {
   display: flex;
   list-style: none;
-  gap: 2rem;
-  flex: 1;
-  justify-content: center;
-  align-items: center;
+  gap: 32px;
+  flex-shrink: 0;
 }
 
 .nav-link {
-  color: white;
+  font-size: 14px;
+  font-weight: 600;
   text-decoration: none;
-  font-weight: 500;
-  font-size: 1rem;
-  padding: 0.5rem 1rem;
-  border-radius: 4px;
-  transition: all 0.3s ease;
-  position: relative;
-}
-
-.nav-link::after {
-  content: '';
-  position: absolute;
-  bottom: -2px;
-  left: 0;
-  width: 0;
-  height: 2px;
-  background-color: #ffd700;
-  transition: width 0.3s ease;
+  color: var(--text-muted);
+  padding-bottom: 4px;
+  border-bottom: 2px solid transparent;
+  transition: color 0.2s, border-color 0.2s;
 }
 
 .nav-link:hover {
-  background-color: rgba(255, 255, 255, 0.1);
+  color: var(--primary);
 }
 
-.nav-link:hover::after {
+.nav-link.active {
+  color: var(--primary);
+  border-bottom-color: var(--primary);
+}
+
+/* ── Barra de Busca ────────────────────────────── */
+.nav-search {
+  flex: 1;
+  position: relative;
+  max-width: 420px;
+}
+
+.nav-search input {
   width: 100%;
+  background: #f5f3ff;
+  border: 1.5px solid var(--border);
+  border-radius: 999px;
+  padding: 9px 40px 9px 18px;
+  font-size: 14px;
+  font-family: var(--font);
+  color: var(--text);
+  outline: none;
+  transition: border-color 0.2s, box-shadow 0.2s;
 }
 
-/* Nav Actions */
-.nav-actions {
-  display: flex;
-  gap: 1rem;
-  align-items: center;
-  flex: 0 0 auto;
+.nav-search input:focus {
+  border-color: var(--primary);
+  box-shadow: 0 0 0 3px rgba(91, 63, 212, 0.12);
 }
 
-.search-btn,
-.cart-btn {
-  background: rgba(255, 255, 255, 0.2);
-  border: none;
-  color: white;
-  padding: 0.6rem 0.8rem;
-  border-radius: 6px;
-  cursor: pointer;
-  font-size: 1.2rem;
-  transition: all 0.3s ease;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  position: relative;
+.nav-search input::placeholder {
+  color: var(--text-muted);
 }
 
-.search-btn:hover,
-.cart-btn:hover {
-  background: rgba(255, 255, 255, 0.3);
-  transform: translateY(-2px);
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-}
-
-.cart-btn {
-  position: relative;
-}
-
-.badge {
+.search-icon {
   position: absolute;
-  top: -8px;
-  right: -8px;
-  background-color: #ff6b6b;
-  color: white;
-  border-radius: 50%;
-  width: 20px;
-  height: 20px;
+  right: 14px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: var(--text-muted);
+  pointer-events: none;
+}
+
+/* ── Ícones ────────────────────────────────────── */
+.nav-icons {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-left: auto;
+  flex-shrink: 0;
+}
+
+.icon-btn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 8px;
+  border-radius: 8px;
+  color: var(--text-muted);
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 0.7rem;
-  font-weight: bold;
+  transition: color 0.2s, background 0.2s;
 }
 
-/* Responsive Design */
-@media (max-width: 768px) {
-  .navbar {
-    padding: 1rem;
-    flex-wrap: wrap;
-    gap: 1rem;
-  }
+.icon-btn:hover {
+  color: var(--primary);
+  background: var(--primary-light);
+}
 
-  .logo-text {
-    font-size: 1.2rem;
-  }
+/* Badge do Carrinho */
+.cart-btn {
+  position: relative;
+}
 
+.cart-badge {
+  position: absolute;
+  top: 2px;
+  right: 2px;
+  background: var(--accent);
+  color: var(--white);
+  font-size: 10px;
+  font-weight: 700;
+  font-family: var(--font);
+  min-width: 17px;
+  height: 17px;
+  border-radius: 999px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 4px;
+  line-height: 1;
+}
+
+/* ── Hamburguer (mobile) ───────────────────────── */
+.hamburger {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 8px;
+  border-radius: 8px;
+  transition: background 0.2s;
+}
+
+.hamburger:hover {
+  background: var(--primary-light);
+}
+
+.hamburger span {
+  display: block;
+  width: 22px;
+  height: 2px;
+  background: var(--text);
+  border-radius: 2px;
+  transition: transform 0.3s, opacity 0.3s;
+}
+
+/* Hamburguer → X */
+.hamburger.open span:nth-child(1) {
+  transform: translateY(7px) rotate(45deg);
+}
+.hamburger.open span:nth-child(2) {
+  opacity: 0;
+}
+.hamburger.open span:nth-child(3) {
+  transform: translateY(-7px) rotate(-45deg);
+}
+
+/* ── Menu Mobile ───────────────────────────────── */
+.mobile-menu {
+  display: none;
+  background: var(--white);
+  border-top: 1px solid var(--border);
+  padding: 16px 24px 24px;
+}
+
+.mobile-menu.open {
+  display: block;
+  animation: slideDown 0.25s ease;
+}
+
+@keyframes slideDown {
+  from { opacity: 0; transform: translateY(-8px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+.mobile-search {
+  position: relative;
+  margin-bottom: 16px;
+}
+
+.mobile-search input {
+  width: 100%;
+  border: 1.5px solid var(--border);
+  border-radius: 999px;
+  padding: 9px 40px 9px 18px;
+  font-size: 14px;
+  font-family: var(--font);
+  outline: none;
+  background: #f5f3ff;
+}
+
+.mobile-search svg {
+  position: absolute;
+  right: 14px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: var(--text-muted);
+}
+
+.mobile-menu ul {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.mobile-menu ul a {
+  display: block;
+  padding: 10px 14px;
+  border-radius: 8px;
+  font-size: 15px;
+  font-weight: 600;
+  text-decoration: none;
+  color: var(--text-muted);
+  transition: color 0.2s, background 0.2s;
+}
+
+.mobile-menu ul a:hover,
+.mobile-menu ul a.active {
+  color: var(--primary);
+  background: var(--primary-light);
+}
+
+/* ── Responsivo ────────────────────────────────── */
+@media (max-width: 1024px) {
   .nav-links {
-    order: 3;
-    width: 100%;
-    gap: 1rem;
-    justify-content: space-around;
-    margin-top: 0.5rem;
-  }
-
-  .nav-link {
-    font-size: 0.9rem;
-    padding: 0.4rem 0.8rem;
-  }
-
-  .nav-actions {
-    gap: 0.5rem;
-  }
-
-  .search-btn,
-  .cart-btn {
-    padding: 0.5rem 0.6rem;
-    font-size: 1rem;
+    display: none;
   }
 }
 
-@media (max-width: 480px) {
-  .navbar {
-    padding: 0.8rem 0.5rem;
-  }
-
-  .logo-text {
+@media (max-width: 768px) {
+  .nav-search {
     display: none;
   }
 
-  .logo-img {
-    width: 40px;
-    height: 40px;
-  }
-
-  .nav-links {
-    gap: 0.5rem;
-  }
-
-  .nav-link {
-    font-size: 0.8rem;
-    padding: 0.3rem 0.6rem;
+  .hamburger {
+    display: flex;
   }
 }
 </style>
