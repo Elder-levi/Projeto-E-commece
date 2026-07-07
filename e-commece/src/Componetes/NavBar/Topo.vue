@@ -15,8 +15,6 @@
     <ul class="nav-links">
       <li><router-link to="/"  class="nav-link active">Home</router-link></li>
       <li><router-link to="/produtos" class="nav-link">Produtos</router-link></li>
-      <li><router-link to="/login" class="nav-link">Entrar</router-link></li>
-      <li><router-link to="/cadastro" class="nav-link">Cadastrar</router-link></li>
     </ul>
 
     <!-- Barra de Busca -->
@@ -34,13 +32,16 @@
     <!-- Ícones -->
     <div class="nav-icons">
       <!-- Usuário -->
-      <button class="icon-btn" aria-label="Minha conta">
-        <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22"
+      <router-link to="/login" class="nav-link">
+      <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22"
              viewBox="0 0 24 24" fill="none" stroke="currentColor"
              stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
           <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/>
           <circle cx="12" cy="7" r="4"/>
         </svg>
+      </router-link>
+      <button class="icon-btn" aria-label="Minha conta">
+        
       </button>
 
       <!-- Carrinho -->
@@ -78,8 +79,6 @@
     <ul>
       <li><router-link to="/"  class="nav-link active">Home</router-link></li>
       <li><router-link to="/produtos" class="nav-link">Produtos</router-link></li>
-      <li><router-link to="/login" class="nav-link">Entrar</router-link></li>
-      <li><router-link to="/cadastro" class="nav-link">Cadastrar</router-link></li>
     </ul>
   </div>
 </header>

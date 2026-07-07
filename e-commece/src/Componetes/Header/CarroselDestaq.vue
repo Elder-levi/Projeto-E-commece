@@ -5,17 +5,7 @@
         <div class="Carrosel-Item"> <img src="../IMG/paisagem-natural-og.webp" alt="Paisagem destaque 2"> </div>
         <div class="Carrosel-Item"> <img src="../IMG/paisagem-natural-og.webp" alt="Paisagem destaque 3"> </div>
     </div>
-     <div class="Box-Catalogo">
-          <div class="Top-Catalogo">
-               <h1>Explorando Catalogo</h1>
-               <div class="Box-Buttons">
-                <button class="CarroselPrev"><img src="../Assets/Icons/seta-esquerda.png" alt=""></button>
-                <button class="CarroselNext"><img src="../Assets/Icons/seta-direita.png" alt=""></button>
-              </div> 
-            </div>
-          <div>
-       </div>
-     </div>
+     
     
 </div>
 </template>
@@ -94,68 +84,6 @@ export default {
 .Carrosel-Item.active {
     display: block;
 }
-.Top-Catalogo {
-display: flex;
-flex-direction: row;
-justify-content: space-between;
-align-items: center;
-text-align: center;
-padding: 20px;
-}
-
-
-.CarroselPrev, .CarroselNext {
-background: none;
-border: none;
-cursor: pointer;
-} 
-
-/*
-.CarroselPrev {
-    position: absolute;
-    top: 50%;
-    left: 20px;
-    z-index: 100;
-    padding: 12px 16px;
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-    color: white;
-    border: none;
-    cursor: pointer;
-    transform: translateY(-50%);
-    border-radius: 6px;
-    font-weight: 600;
-    transition: all 0.3s ease;
-    box-shadow: 0 4px 15px rgba(102, 126, 234, 0.4);
-}
-
-.CarroselPrev:hover {
-    transform: translateY(-50%) scale(1.05);
-    box-shadow: 0 6px 20px rgba(102, 126, 234, 0.6);
-}
-
-.CarroselNext {
-    position: absolute;
-    top: 50%;
-    right: 20px;
-    z-index: 100;
-    padding: 12px 16px;
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-    color: white;
-    border: none;
-    cursor: pointer;
-    transform: translateY(-50%);
-    border-radius: 6px;
-    font-weight: 600;
-    transition: all 0.3s ease;
-    box-shadow: 0 4px 15px rgba(102, 126, 234, 0.4);
-}
-
-.CarroselNext:hover {
-    transform: translateY(-50%) scale(1.05);
-    box-shadow: 0 6px 20px rgba(102, 126, 234, 0.6);
-}
-*/
-
 
 
 </style>
